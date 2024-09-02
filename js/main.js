@@ -20,3 +20,30 @@ function saludarUsuario() {
 }
 
 saludarUsuario();
+
+function obtenerInfoUsuario () {
+    const invertisteAlgunaVez = confirm("¿Alguna vez a has hecho inversiones?");
+
+    if (invertisteAlgunaVez) {
+        alert ("Genial, vamos a personalizar tu próxima inversion!")
+    }else {
+        alert("No te preocupes, te ayudaremos a comenzar")
+    }
+
+    do{
+        capitalDisponible = parseFloat(prompt("¿Cuánto capital estas dispuesto a invertir? , recuerda indicar el monto en USD."));
+        if(isNaN(capitalDisponible) || capitalDisponible <= 0) {
+            alert ("Por favor, ingresá una cantidad válida.");
+        } 
+    }while (isNaN(capitalDisponible) || capitalDisponible <= 0);
+
+    do {
+        plazoInversion = parseInt(prompt("¿Cuánto tiempo estimás en meses, que estarías dispuesto a Invertir tus " + capitalDisponible + "USD?")); {
+        if (isNaN(plazoInversion) || plazoInversion <= 0) {
+            alert("Por favor, ingresá una cantidad de meses válida.")
+        }
+        }
+    }while (isNaN(plazoInversion) || plazoInversion <= 0);
+}
+
+obtenerInfoUsuario ()

@@ -106,9 +106,6 @@ verCarrito.addEventListener("click", () => {
 
 
 
-
-
-
 //section test inversor//
 const btnTest = document.getElementById("btn-abrir-test");
 const sectionDelTest = document.getElementById("section-test");
@@ -116,113 +113,6 @@ const sectionDelTest = document.getElementById("section-test");
 btnTest.addEventListener("click", () => {
     sectionDelTest.classList.toggle("hidden");
 });
-
-
-
-
-// function determinarPerfilInversor (respuestas) {
-//     let puntaje = 0;
-
-//     if (respuestas[`instrumentos`] === `Acciones` || `Criptomonedas`){
-//         puntaje = puntaje + 2;
-//     }else if(respuestas [`instrumentos`] === `Bonos` || `Fondos de Inversión`){
-//         puntaje = puntaje + 1;
-//     }
-
-//     if (respuestas [`conocimiento`] === `Medio` || `Alto`){
-//         puntaje = puntaje +2;
-//     }else if (respuestas [`conocimiento`] === `Bajo`){
-//         puntaje = puntaje + 1 ;
-//     }
-    
-//     if (respuestas [`Plazo`] === `3-5 años` || `Mas de 5 años`){
-//         puntaje = puntaje + 3;
-//     }else if (respuestas [`Plazo`] === ` 1-3 años`){
-//         puntaje = puntaje + 2;
-//     }else if (respuestas [`Plazo`] === ` Menos de 1 año`){
-//         puntaje = puntaje + 1; 
-//     }
-
-//    if (respuestas [`Edad`] < `30`) {
-//     puntaje = puntaje + 3;
-//    }else if (respuestas [`Edad`] < `50`){
-//     puntaje = puntaje + 2;
-//    }else if ( respuestas [`Edad`] > `50`){
-//     puntaje = puntaje +1;
-//    }
-
-//    if (respuestas [`objetivos`] === `Crecimiento de Capital` || `Diversificación`) {
-//     puntaje = puntaje + 2;
-//    }else if(respuestas[`objetivos`] === ` Ingreso Pasivo`){
-//     puntaje = puntaje + 1;
-//    }
-
-//    if (respuestas [`seguro`] === `No contrataría ninguna póliza si pudiera`){
-//     puntaje = puntaje + 3;
-//    }else if (respuestas [`seguro`] === `La póliza más barata, aunque su cobertura sea muy pobre`){
-//     puntaje = puntaje + 2;
-//    }else if (respuestas [`seguro`] === `A todo riesgo`){
-//     puntaje = puntaje + 1;
-//    }
-
-//    if (respuestas [`disponible`] === `Entre el 10% y 25% de mi salario`){
-//     puntaje = puntaje + 3;
-//    }else if (respuestas [`disponible`] === ` Menos del 10% de mi salario`){
-//     puntaje = puntaje + 2;
-//    }else if (respuestas [`disponible`] === `  Dependiendo cuanto me sobre a fin de mes`){
-//     puntaje = puntaje + 1;
-//    }
-
-//    if (puntaje <= 11) {
-//     return "Conservador";
-
-//    }else if ( puntaje <= 14 ){
-//     return "Moderado";
-
-//    }else {
-//     return "Agresivo";  
-//    }
-
-// }
-
-
-// investorForm.addEventListener('submit', (event) => {
-//     event.preventDefault(); // Prevenir envío del formulario
-
-//     // Obtener respuestas del formulario
-//     const respuestas = Object.fromEntries(new FormData(investorForm));
-//     console.log('Respuestas:', respuestas); // Para depuración
-
-//     mostrarResultados(respuestas);
-//     investorTestSection.classList.add('hidden'); // Ocultar test
-//     investorForm.reset(); // Resetear formulario
-// });
-
-
-
-
-
-
-
-
-
-
-
-// function mostrarResultado (respuestas) {
-//     const PerfilInversor = determinarPerfilInversor (respuestas);
-
-
-//     resultDiv.innerHTML = `<h4>Perfil del Inversor: ${perfilInversor}</h4>`;
-
-
-
-//     resultContainer.classList.remove('hidden'); // Mostrar resultados
-
-// }
-
-
-
-
 
 
 

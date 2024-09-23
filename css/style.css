@@ -1,4 +1,4 @@
-/* Reset de márgenes y paddings */
+/* Reseteoo */
 * {
     margin: 0;
     padding: 0;
@@ -95,7 +95,7 @@ nav {
 
 
 .hero {
-    background: url(/assets/fondo3.jpg) no-repeat;
+    background: url(../assets/fondo3.jpg) no-repeat;
     background-position: center center;
     background-size: cover;
     color: #fff;

@@ -1,18 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- IconWeb -->
+    <link rel="icon" href="./assets/icons/iconWeb.jpg" type="image/x-icon">
     <title>Inversión PRO</title>
 </head>
+
 <body>
-    <header>
-        <nav>
+
+    <header id="inicio">
+        <nav class="navbar">
             <div class="nav-container">
                 <a class="logo">Inversión Pro</a>
-    
+
                 <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#acercaDeNosotros">Acerca de Nosotros</a></li>
+                    <li><a href="#section-cursos">Academia</a></li>
+                    <li><a href="#testInversores">Perfiles de Inversores</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Bienvenido a Inversión <span class="hero-pro">Pro</span></h1>
+        <p>Invertí con pesos y obtené rendimientos en dólares a largo plazo con las empresas <br> más importantes del
+            mundo.</p>
+        <button id="btn-nuevo">Descubre Más</button>
+    </section>
+
+    <main>
+        <section id="section-criptos" class="section-criptos animacion-section">
+            <div id="errorCriptos"></div>
+        </section>
+
+        <section id="academia">
+
+            <div id="section-cursos" class="section-cursos">
+
+            </div>
+
+
+            <div class="container-carrito">
+                <div class="container-registrate">
+                    <h3 class="color">Regístrate y recibí toda la información del Mercado</h3>
+                    <input class="correo" type="text" name="email" id="email" placeholder="Ingresa tu email">
+                </div>
+
+                <div class="container-button-carrito">
+                    <span class="btn-black">Suscribirme</span>
+                    <button id="ver-carrito" class="ver-carrito">🛒</button>
+                </div>
+
+            </div>
+
+
+            <div id="modal-container" class="modal-container"></div>
+
+        </section>
+
+        <section id="testInversores" class="test-inversor">
+            <div class="container-test-up">
+                <div>
+                    <img src="./assets/test.jpg" alt="tipos de inversores">
+                </div>
+                <div>
+                    <h3>Conócete como <span class="inversor-color">Inversor</span></h3>
+                    <p>Respondé 7 simples preguntas y conocé qué tipo de inversor sos: <br> <strong>Conservador,
+                            Moderado o Agresivo.</strong><br>
+                        <br>Además al finalizar te mostraremos un portafolio para tu perfil.
+                    </p>
+                </div>
+            </div>
+
+            <div class="container-test-down">
+                <h4>¿Cómo funciona?</h4>
+                <p>Al conocer qué tipo de inversor sos, podrás elegir de mejor forma entre las alternativas de inversión
+                    disponibles. Recordá que la inversión que es adecuada para otros, puede no serlo para vos.
+                    <strong>Con este test podrás conocer qué tipo de inversor sos</strong>, y al finalizar, te
+                    mostraremos un portafolio acorde a tu perfil.
+                </p>
+                <div class="btn-down">
+                    <button id="btn-abrir-test">Quiero hacer el test</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-test" class="test-del-inversor-class hidden">
+            <h5>Test de Inversor</h5>
+            <form id="inversor-form">
+                <div class="container-pregunta">
+                    <label>1. ¿En cuáles de estos instrumentos has invertido alguna vez?</label>
+                    <div>
+                        <label><input type="radio"> Acciones</label><br>
+                        <label><input type="radio"> Bonos</label><br>
+                        <label><input type="radio"> Fondos de Inversión</label><br>
+                        <label><input type="radio"> Criptomonedas</label><br>
+                    </div>
+                </div>
+                <div class="container-pregunta">
+                    <label>2. ¿Cuál es tu grado de conocimiento de cada instrumento?</label>
+                    <div>
+                        <label><input type="radio"> Bajo</label><br>
+                        <label><input type="radio"> Medio</label><br>
+                        <label><input type="radio"> Alto</label><br>
+                    </div>
+                </div>
+                <div class="container-pregunta">
+                    <label>3. ¿Cuál es el plazo máximo que estarías dispuesto a mantener tus inversiones?</label>
+                    <div>
+                        <label><input type="radio"> Menos de 1 año</label><br>
+                        <label><input type="radio"> 1-3 años</label><br>
+                        <label><input type="radio"> 3-5 años</label><br>
+                        <label><input type="radio"> Más de 5 años</label><br>
+                    </div>
+                </div>
+                <div class="container-pregunta">
+                    <label for="age">4. ¿Cuántos años tenés?</label>
+                    <input type="number" id="age" required>
+                </div>
+                <div class="container-pregunta">
+                    <label>5. Al momento de realizar una inversión, buscas:</label>
+                    <div>
+                        <label><input type="radio"> Crecimiento de Capital</label><br>
+                        <label><input type="radio"> Ingreso Pasivo</label><br>
+                        <label><input type="radio"> Diversificación</label><br>
+                    </div>
+                </div>
+                <div class="container-pregunta">
+                    <label>6. Si tuvieras que contratar un seguro para auto, optarías por:</label>
+                    <div>
+                        <label><input type="radio"> A todo riesgo</label><br>
+                        <label><input type="radio"> La póliza más barata, aunque su cobertura sea muy pobre</label><br>
+                        <label><input type="radio"> No contrataría ninguna póliza si pudiera</label><br>
+                    </div>
+                </div>
+                <div class="container-pregunta">
+                    <label>7. El capital que vas a invertir se corresponde con cual porcentaje de tu patrimonio:</label>
+                    <div>
+                        <label><input type="radio"> Menos del 10% de mi salario</label><br>
+                        <label><input type="radio"> Entre el 10% y 25% de mi salario</label><br>
+                        <label><input type="radio"> Dependiendo cuanto me sobre a fin de mes</label><br>
+                    </div>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+
+            <!-- Container para los resultados -->
+            <div id="resultado-container" class="hidden">
+                <h3>Resultados del Test</h3>
+                <div id="resultado"></div>
+            </div>
+        </section>
+
+        <section id="acercaDeNosotros">
+            <div class="about-contenido">
+                <div class="about-texto">
+                    <h2>Acerca de Nosotros</h2>
+                    <p>En <span class="about-texto-pro">Inversión PRO,</span> nos especializamos en proporcionar a
+                        nuestros clientes acceso a oportunidades de inversión exclusivas en mercados de lujo. Con un
+                        enfoque en la excelencia y un compromiso con el éxito de nuestros clientes, estamos aquí para
+                        ayudar a maximizar el valor de tus inversiones.</p>
+                </div>
+                <div class="about-img">
+                    <img src="./assets/about.jpg" alt="Sobre Nosotros">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section id="section-cotizaciones" class="section-cotizaciones">
+        <div id="errorCotizaciones"></div>
+    </section>
+
+    <section id="reportes" class="reportes">
+        <div class="reportes-header">
+            <h2>Reportes del Mercado</h2>
+            <p>Últimas noticias y análisis financieros para mantenerte informado.</p>
+        </div>
+        <div class="reportes-contenedor">
+            <article class="reporte-item">
+
+                <div class="reporte-imagen"></div>
+
+                <div class="reporte-info">
+                    <h3>Últimas Noticias del Mercado Financiero</h3>
+                    <p><em>Las últimas noticias y análisis sobre las tendencias actuales del mercado.</em></p>
+                    <a href="#" class="leer-mas">Leer Más</a>
+                </div>
+
+            </article>
+            <article class="reporte-item">
+                <div class="reporte-imagen"></div>
+                <div class="reporte-info">
+                    <h3>Impacto por las Elecciones en EE.UU</h3>
+                    <p><em>Cómo las recientes elecciones están afectando los mercados internacionales.</em></p>
+                    <a href="#" class="leer-mas">Leer Más</a>
+                </div>
+            </article>
+            <article class="reporte-item">
+                <div class="reporte-imagen"></div>
+                <div class="reporte-info">
+                    <h3>Dolar HOY</h3>
+                    <p><em>Las letra del tesoro continuan siendo la mejor opción por el momento.</em></p>
+                    <a href="#" class="leer-mas">Leer Más</a>
+                </div>
+            </article>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-container">
+
+            <div class="footer-links">
+                <h4>Creditos</h4>
+                <ul>
+                    <li><a href="https://docs.coingecko.com/v3.0.1/reference/introduction">CoinGecko API</a></li>
+                    <li><a href="https://bluelytics.com.ar/#!/api">Bluelytics API</a></li>
+                    <li><a href="https://apvarun.github.io/toastify-js/#">Toastify JS</a></li>
+                    <li><a href="https://sweetalert2.github.io/">Sweetalert2</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
                     <li><a href="#">Inicio</a></li>
                     <li><a href="#">Acerca de Nosotros</a></li>
                     <li><a href="#">Servicios</a></li>
@@ -20,173 +241,37 @@
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </div>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <h1>Bienvenido a Inversión <span class="pro-hero">Pro</span></h1>
-        <p>Invertí con pesos y obtené rendimientos en dólares a largo plazo con las empresas <br> más importantes del mundo.</p>
-        <button id="btn-nuevo">Descubre Más</button>
-    </section> 
-
-
-        <!--Cursos-->
-        <div id="shop-cursos" class="shop-cursos">
-        </div>
-
-        <div>
-            <h1 id="verCarrito" class="ver-carrito">🛒</h1>
-        </div>
-
-        <!--Modal-->
-        <div id="modal-container" class="modal-container"></div>
-
-
-         <!--Test del Inversor-->
-        <section class="test-inversor">
-            <div class="container-test-up">
-                <div>
-                    <img src="./assets/test.jpg" alt="tipos de inversores">
-                </div>
-                <div>
-                    <h3>Conócete como <span class="inversor-color">Inversor</span></h3>
-                    <p>Respondé 7 simples preguntas y conocé qué tipo de inversor sos: <br> <strong>Conservador, Moderado o Agresivo.</strong><br>
-                    <br>Además al finalizar te mostraremos un portafolio para tu perfil.</p>
-                </div>
+            <div class="footer-contact">
+                <h4 id="contacto">Contacto</h4>
+                <p>Email: <a href="mailto:info@inversionpro.com">inversionproargentina@gmail.com</a></p>
+                <p>Teléfono: <a href="tel:+123456789">+54 11 6412-5527</a></p>
+                <p>Dirección: Av. de la Inversión 123, Ciudad Financiera</p>
             </div>
 
-            <div class="container-test-down">
-                <h4>¿Cómo funciona?</h4>
-                <p>Al conocer qué tipo de inversor sos, podrás elegir de mejor forma entre las alternativas de inversión disponibles. Recordá que la inversión que es adecuada para otros, puede no serlo para vos.
-                    <strong>Con este test podrás conocer qué tipo de inversor sos</strong>, y al finalizar, te mostraremos un portafolio acorde a tu perfil.</p>
-                <div class="btn-down">
-                    <button id="btn-abrir-test">Quiero hacer el test</button>
-                </div>
-            </div>
-        </section>
-    
-
-
-    <section id="section-test" class="test-del-inversor-class hidden">
-        <h5>Test de Inversor</h5>
-        <form id="inversor-form">
-            <div class="container-pregunta">
-                <label>1. ¿En cuáles de estos instrumentos has invertido alguna vez?</label>
-                <div>
-                    <label><input type="radio"> Acciones</label><br>
-                    <label><input type="radio"> Bonos</label><br>
-                    <label><input type="radio"> Fondos de Inversión</label><br>
-                    <label><input type="radio"> Criptomonedas</label><br>
-                </div>
-            </div>
-            <div class="container-pregunta">
-                <label>2. ¿Cuál es tu grado de conocimiento de cada instrumento?</label>
-                <div>
-                    <label><input type="radio"> Bajo</label><br>
-                    <label><input type="radio"> Medio</label><br>
-                    <label><input type="radio"> Alto</label><br>
-                </div>
-            </div>
-            <div class="container-pregunta">
-                <label>3. ¿Cuál es el plazo máximo que estarías dispuesto a mantener tus inversiones?</label>
-                <div>
-                    <label><input type="radio"> Menos de 1 año</label><br>
-                    <label><input type="radio"> 1-3 años</label><br>
-                    <label><input type="radio"> 3-5 años</label><br>
-                    <label><input type="radio"> Más de 5 años</label><br>
-                </div>
-            </div>
-            <div class="container-pregunta">
-                <label for="age">4. ¿Cuántos años tenés?</label>
-                <input type="number" id="age" required>
-            </div>
-            <div class="container-pregunta">
-                <label>5. Al momento de realizar una inversión, buscas:</label>
-                <div>
-                    <label><input type="radio"> Crecimiento de Capital</label><br>
-                    <label><input type="radio"> Ingreso Pasivo</label><br>
-                    <label><input type="radio"> Diversificación</label><br>
-                </div>
-            </div>
-            <div class="container-pregunta">
-                <label>6. Si tuvieras que contratar un seguro para auto, optarías por:</label>
-                <div>
-                    <label><input type="radio"> A todo riesgo</label><br>
-                    <label><input type="radio"> La póliza más barata, aunque su cobertura sea muy pobre</label><br>
-                    <label><input type="radio"> No contrataría ninguna póliza si pudiera</label><br>
-                </div>
-            </div>
-            <div class="container-pregunta">
-                <label>7. El capital que vas a invertir se corresponde con cual porcentaje de tu patrimonio:</label>
-                <div>
-                    <label><input type="radio"> Menos del 10% de mi salario</label><br>
-                    <label><input type="radio"> Entre el 10% y 25% de mi salario</label><br>
-                    <label><input type="radio"> Dependiendo cuanto me sobre a fin de mes</label><br>
-                </div>
-            </div>
-            <button type="submit">Enviar</button>
-        </form>
-        
-        <!-- Container para los resultados -->
-        <div id="resultado-container" class="hidden">
-            <h3>Resultados del Test</h3>
-            <div id="resultado"></div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="about-content">
-            <div class="about-text">
-                <h2>Acerca de Nosotros</h2>
-                <p>En <span class="about-text-pro">Inversión PRO</span>, nos especializamos en proporcionar a nuestros clientes acceso a oportunidades de inversión exclusivas en mercados de lujo. Con un enfoque en la excelencia y un compromiso con el éxito de nuestros clientes, estamos aquí para ayudar a maximizar el valor de tus inversiones.</p>
-            </div>
-            <div class="about-image">
-                <img src="./assets/about.jpg" alt="Sobre Nosotros">
+            <div class="footer-newsletter">
+                <h4>Suscríbete a Nuestro Boletín</h4>
+                <p>Recibe las últimas novedades y consejos de inversión directamente en tu correo electrónico.</p>
+                <input type="email" placeholder="Ingresa tu email" id="newsletter-email">
+                <button class="btn-black" id="subscribe-btn">Suscribirme</button>
             </div>
         </div>
-    </section>  
 
-
-
-    <section class="reports">
-        <div class="reports-header">
-            <h2>Reportes del Mercado</h2>
-            <p>Últimas noticias y análisis financieros para mantenerte informado.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Inversión PRO. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><img src="./assets/icons/fb.svg" alt="Facebook"></a>
+                <a href="#" aria-label="Twitter"><img src="./assets/icons/x.avif" alt="Twitter"></a>
+                <a href="#" aria-label="LinkedIn"><img src="./assets/icons/linkedin-icon.svg" alt="LinkedIn"></a>
+            </div>
         </div>
-        <div class="reports-container">
-            <article class="report-item">
-                <div class="report-image" style="background-image: url('report1.jpg');"></div>
-                <div class="report-info">
-                    <h3>Últimas Tendencias en el Mercado Financiero</h3>
-                    <p><em>Las últimas noticias y análisis sobre las tendencias actuales del mercado.</em></p>
-                    <a href="#" class="read-more">Leer Más</a>
-                </div>
-            </article>
-            <article class="report-item">
-                <div class="report-image" style="background-image: url('report2.jpg');"></div>
-                <div class="report-info">
-                    <h3>Impacto de las Políticas Económicas Globales</h3>
-                    <p><em>Cómo las recientes políticas económicas están afectando los mercados internacionales.</em></p>
-                    <a href="#" class="read-more">Leer Más</a>
-                </div>
-            </article>
-            <article class="report-item">
-                <div class="report-image" style="background-image: url('report3.jpg');"></div>
-                <div class="report-info">
-                    <h3>Innovaciones en el Mundo de las Inversiones</h3>
-                    <p><em>Explora las nuevas tecnologías y métodos que están revolucionando las inversiones.</em></p>
-                    <a href="#" class="read-more">Leer Más</a>
-                </div>
-            </article>
-        </div>
-    </section>
+    </footer>
 
-
-    <main>
-        <h1>Inversión PRO</h1>
-        <p>En Inversión PRO, obtendrás una guía para comenzar a operar en la bolsa de valores.</p>
-    </main>
-    <script src="js/main.js"></script>
+    <!-- Sweet Alert CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Toastify CDN-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- JS -->
+    <script src="./js/main.js"></script>
 </body>
 </html>

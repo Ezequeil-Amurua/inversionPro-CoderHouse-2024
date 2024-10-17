@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "nombre": "Finanzas Personales",
+        "precio": 20000,
+        "promocion": "15%OFF",
+        "duracion": "6 Meses"
+    },
+    {
+        "id": 2,
+        "nombre": "Criptomonedas 2024",
+        "precio": 20000,
+        "promocion": "5%OFF",
+        "duracion": "1 Año"
+    },
+    {
+        "id": 3,
+        "nombre": "Invertir en Bolsa",
+        "precio": 20000,
+        "promocion": "5%OFF",
+        "duracion": "1 Año"
+    },
+    {
+        "id": 4,
+        "nombre": "Análisis Técnico",
+        "precio": 20000,
+        "promocion": "15%OFF",
+        "duracion": "6 Meses"
+    }
+]

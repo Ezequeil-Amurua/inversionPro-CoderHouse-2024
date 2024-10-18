@@ -240,7 +240,7 @@ button:focus {
 /**CARRITO////////////////////////////////////////////////////////////////////////////////////////////*/
 .section-cursos {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, #646261, #eaeacc, #b6b1b1, #d3d3d1, #eaeacc);
     padding: 50px;
@@ -249,6 +249,7 @@ button:focus {
 }
 
 .container-curso {
+    margin: 0px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

@@ -17,7 +17,7 @@ if (carritoStorage) {
     carrito = carritoStorage;
 }
 
-
+//Guardar carrito en el localStorage
 function guardarCarrito() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
@@ -30,10 +30,9 @@ fetch("./cursos.json")
             throw new Error("Error en la Red");
         }
         return response.json();
-        console.log(cursos)
     })
     .then(cursos => {
-        // Cursos Cards
+        // Para crear las cards de los cursos
         cursos.forEach(curso => {
             let contenedor = document.createElement("div");
             contenedor.className = "container-curso";
@@ -42,7 +41,7 @@ fetch("./cursos.json")
                                         <h3> $${curso.precio} <span class="off">${curso.promocion}</span></h3>
                                         <h4 class = "color">⏱${curso.duracion}</h4>`;
 
-            sectionCursos.appendChild(contenedor);
+            sectionCursos.appendChild(contenedor); 
 
             // Creando Botón Comprar
             let comprarCurso = document.createElement("button");
@@ -54,7 +53,7 @@ fetch("./cursos.json")
             // Agregar Curso al carrito 
             comprarCurso.addEventListener("click", () => {
 
-                //Validacion si ya esta agregado un curso al carrito
+                //Verificar si el curso ya esta en el carrito
                 const cursoExistente = carrito.some(cursoEnCarrito => cursoEnCarrito.nombre === curso.nombre);
                 if (cursoExistente) {
                     Toastify({
@@ -84,17 +83,21 @@ fetch("./cursos.json")
                             color: "black",
                         },
                     }).showToast();
-                    guardarCarrito();
+                    guardarCarrito(); //guardamos carrito
                 }
             });
         });
     })
     .catch(error => {
-        console.error("Hubo un problema con la solicitud fetch:", error);
+        const errorCursos = document.getElementById("error-cursos");
+        errorCursos.className = "error-cursos-text"
+        errorCursos.textContent = `En estos momentos estamos actualizando nuestros cursos, vuelve a intentar
+                                    visualizarlos mas tarde. En caso que el problema aun persista, puedes contactarnos
+                                    por nuestro correo y te responderemos a la brevedad.🐱‍🐉`
     });
 
 
-//Carrito
+//Mostrar el Carrito
 verCarrito.addEventListener("click", () => {
 
     modalContainer.classList.add("active");
@@ -105,14 +108,14 @@ verCarrito.addEventListener("click", () => {
 
     modalContainer.appendChild(cabeceraModal);
 
-    //Cerrar Modal
+    //Boton para cerrar Modal
     const cerrarModal = document.createElement("button");
     cerrarModal.innerText = "X";
     cerrarModal.className = "btn-black";
 
     cerrarModal.addEventListener("click", () => {
         modalContainer.classList.remove("active");
-        modalContainer.innerHTML = '';
+        modalContainer.innerHTML = ''; //Limpiar el modal
     });
 
     cabeceraModal.append(cerrarModal);
@@ -122,27 +125,27 @@ verCarrito.addEventListener("click", () => {
         contenidoCarrito.className = "contenido-carrito";
         contenidoCarrito.innerHTML = `<h2 class="color">Tu carrito está vacío</h2>`;
         modalContainer.append(contenidoCarrito);
-        return;
+        return; 
     }
 
-    //Cursos en el carrito
+    //Mostrar los cursos en el carrito
     carrito.forEach((curso, index) => {
         let contenidoCarrito = document.createElement("div");
         contenidoCarrito.className = "contenido-carrito";
         contenidoCarrito.innerHTML = `<h2 class="color">${curso.nombre}</h2>
                                         <h3>$${curso.precio}</h3>`;
 
-        //X para borrar curso
+        //Boton para borrar curso
         const btnEliminar = document.createElement("p");
         btnEliminar.innerText = "X";
         btnEliminar.className = "p-light";
 
 
         btnEliminar.addEventListener("click", () => {
-            carrito.splice(index, 1);
+            carrito.splice(index, 1); //Eliminar curso del carrito
             modalContainer.innerHTML = "";
-            verCarrito.click();
-            guardarCarrito();
+            verCarrito.click(); //Volver a mostrar el carrito
+            guardarCarrito();  //Actualizo carrito
             Toastify({
                 text: `Haz quitado el curso ${curso.nombre}`,
                 duration: 2000,
@@ -160,7 +163,7 @@ verCarrito.addEventListener("click", () => {
         modalContainer.append(contenidoCarrito);
     });
 
-    //Total Compra
+    //Calculo total de compra
     const total = carrito.reduce((acc, e) => acc + e.precio, 0);
 
     const totalCompra = document.createElement("div");
@@ -169,7 +172,7 @@ verCarrito.addEventListener("click", () => {
 
     modalContainer.append(totalCompra);
 
-    //BTN para pagar
+    //Boton para pagar
     const btnPagar = document.createElement("button");
     btnPagar.className = "btn-black"
     btnPagar.innerText = "Pagar"
@@ -191,16 +194,18 @@ verCarrito.addEventListener("click", () => {
 
             <div class = "contenido-carrito-form">   
                 <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" required value ="Javier Gimenez">
+                <input type="text" id="nombre" value ="Javier Gimenez" required >
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" required value ="elpeladejavasscript@gmail.com">
+                <input type="email" id="email" value ="elpeladejavasscript@gmail.com" required>
 
-                <label for="formaPago">Forma de Pago:</label>
+                <label for="pais">País :</label>
 
-                <select id="formaPago" required>
-                    <option value="tarjeta">Tarjeta de Crédito o Débito</option>
-                    <option value="transferencia">Transferencia Bancaria</option>
+                <select id="pais" required>
+                    <option value="argentina">Argentina</option>
+                    <option value="uruguay">Uruguay</option>
+                    <option value="colombia">Colombia</option>
+                    <option value="peru">Perú</option>
                 </select>
             </div>
             
@@ -208,13 +213,13 @@ verCarrito.addEventListener("click", () => {
             <div class ="formulario-pago">
 
                 <label for="numeroTarjeta">Número de Tarjeta:</label>
-                <input type="text" id="numeroTarjeta" required value="4517 5678 9012 3456">
+                <input type="text" id="numeroTarjeta" value="4517 5678 9012 3456" required >
                 
                 <label for="fechaExpiracion">Fecha de Expiración (MM/AA):</label>
-                <input type="text" id="fechaExpiracion" class = "pago" placeholder="MM/AA" required value="12/25">
+                <input type="text" id="fechaExpiracion" class = "pago" placeholder="MM/AA" value="12/25" required>
 
                 <label for="codigoSeguridad">Código de Seguridad:</label>
-                <input type="text" id="codigoSeguridad" class = "pago" required value="383">
+                <input type="text" id="codigoSeguridad" class = "pago" value="383" required>
                 
             </div>
 
@@ -222,7 +227,7 @@ verCarrito.addEventListener("click", () => {
 
         modalContainer.appendChild(formularioPago);
 
-        //Cerrar Formulario
+        //Cerrar el Formulario
         const cerrarFormulario = document.getElementById("cerrarFormulario");
         cerrarFormulario.addEventListener("click", () => {
 
@@ -230,15 +235,10 @@ verCarrito.addEventListener("click", () => {
             modalContainer.innerHTML = " ";
         })
 
-        // Manejar el envío del formulario
+        // Envio del formulario 
         formularioPago.querySelector("button[type='submit']").addEventListener("click", (event) => {
             event.preventDefault();
 
-
-            // Manejo de datos del formulario
-            const nombre = document.getElementById("nombre").value;
-
-            // Mostrar un mensaje de confirmación
             modalContainer.classList.remove("active");
             modalContainer.innerHTML = "";
             Swal.fire({
@@ -255,7 +255,7 @@ verCarrito.addEventListener("click", () => {
             ;
         })
 
-        // Limpiamos Carrito
+        // Limpiamos Carrito y guardamos
         carrito = [];
         guardarCarrito();
 
@@ -279,9 +279,9 @@ fetch("https://api.bluelytics.com.ar/v2/latest")
                                     <li><a href="#euro">(EURO) $${data.oficial_euro.value_sell} </a></li>
                                 </ul>`;
 
-        sectionCotizaciones.appendChild(contentDolar);
-    }).catch((error) => {
-        const errorCotizaciones = document.getElementById(errorCotizaciones);
+        sectionCotizaciones.appendChild(contentDolar); //Agrego la info al DOM
+    }).catch(() => {
+        const errorCotizaciones = document.getElementById("errorCotizaciones");
         errorCotizaciones.textContent = `Cargando Cotizaciones...`
     });
 
@@ -310,7 +310,7 @@ const traerCriptos = async () => {
             img.alt = cripto.name;
             img.className = "img-cripto"
 
-            item.appendChild(img)
+            item.appendChild(img) //Agrego la img de la cripto
 
             const link = document.createElement("a");
             link.textContent = `${cripto.name} $${cripto.current_price}`
@@ -320,17 +320,16 @@ const traerCriptos = async () => {
         });
 
         contenidoCoins.appendChild(lista);
-        sectionCriptos.appendChild(contenidoCoins);
+        sectionCriptos.appendChild(contenidoCoins); 
 
     } catch (error) {
         errorCriptos.textContent = `Cargando Criptomonedas...`;
     }
 }
+traerCriptos(); //Llamar Criptos
 
-traerCriptos();
 
-
-//section test inversor//
+//section test inversor pendiente//
 const btnTest = document.getElementById("btn-abrir-test");
 const sectionDelTest = document.getElementById("section-test");
 

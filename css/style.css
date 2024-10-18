@@ -313,6 +313,11 @@ button:focus {
     color: #032627;
 }
 
+.error-cursos-text {
+    font-weight: bold;
+    font-size: 2.3em;
+}
+
 /* MODAL /////////////////////////////////////////////////////////////////////////////////////////////////*/
 .modal-container {
     display: flex;
@@ -415,6 +420,7 @@ select {
     justify-content: space-between;
     max-width: 1400px;
     margin: 0 auto;
+    gap: 50px;
     padding: 100px 110px 20px 110px;
 }
 
@@ -427,7 +433,7 @@ select {
 }
 
 .container-test-up h3 {
-    font-size: 2.5em;
+    font-size: 2.4em;
     margin-bottom: 20px;
 }
 

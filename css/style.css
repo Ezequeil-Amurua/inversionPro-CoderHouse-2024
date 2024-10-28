@@ -747,7 +747,7 @@ footer h4 {
 @media only screen and (max-width : 992px){
     .nav-container {
         flex-direction: column;
-        padding: 15px;
+        padding: 10px;
     }
 }
 

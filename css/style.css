@@ -758,3 +758,70 @@ footer h4 {
         display: none;
     }   
 }
+
+
+
+
+
+/* PAGE HERRAMIENTAS */
+
+/* Section Buscador */
+.section-ratios{
+    display: flex;
+    align-items:start;
+    justify-content: center;
+}
+
+.container-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(/assets/img-herramientas/background-image-input3.jfif) no-repeat center center / cover;
+    height: 250px;
+    width: 100%;
+}
+
+.section-ratios input {
+    width: 94%;
+    margin: 15px;
+    padding: 16px;
+    border-radius: 9px;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+/* Section Ratios CEDEARs */
+.container-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+th {
+    padding: 14px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: gainsboro;
+    font-size: 17px;
+}
+
+td {
+    padding: 14px;
+    background: linear-gradient(100deg, gray, rgb(84, 83, 83));
+    border-bottom: 1px solid #fff;
+    color: #f1eeee;
+    font-weight: bold;
+    text-align: center;
+}
+td:hover{
+    background: linear-gradient(100deg, gray, rgb(142, 140, 140));
+}

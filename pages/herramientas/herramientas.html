@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="./assets/icons/iconWeb.jpg" type="image/x-icon">
+    <title>Inversión PRO</title>
+</head>
+
+<body>
+    <header id="inicio">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a class="logo" href="/index.html">Inversión Pro</a>
+
+                <ul class="nav-links">
+                    <li><a class="phone-no" href="#acercaDeNosotros">Acerca de Nosotros</a></li>
+                    <li><a href="#section-cursos">Academia</a></li>
+                    <li><a href="#testInversores">Perfiles de Inversores</a></li>
+                    <li><a href="/pages/herramientas/herramientas.html">Herramientas</a></li>
+                    <li><a class="phone-no" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="section-ratios" class="section-ratios">
+            <div class="container-input">
+                <input type="text" name="" id="buscador-ratios" placeholder="Buscar Ticker...">
+            </div>
+        </section>
+
+        <section id="section-cedears" class="section-cedears">
+
+            <div class="container-table">
+
+                <!-- TABLA CEDEARs -->
+                <table>
+
+                    <thead class="thead-cedears">
+                        <tr>
+                            <th>TICKER</th>
+                            <th>COMPANY</th>
+                            <th>RATIO</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="tablebody-cedears">
+
+                    </tbody>
+                    
+                </table>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+
+            <div class="footer-links">
+                <h4>Creditos</h4>
+                <ul>
+                    <li><a href="https://docs.coingecko.com/v3.0.1/reference/introduction">CoinGecko API</a></li>
+                    <li><a href="https://bluelytics.com.ar/#!/api">Bluelytics API</a></li>
+                    <li><a href="https://apvarun.github.io/toastify-js/#">Toastify JS</a></li>
+                    <li><a href="https://sweetalert2.github.io/">Sweetalert2</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Acerca de Nosotros</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Perfiles de Inversores</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4 id="contacto">Contacto</h4>
+                <p>Email: <a href="mailto:info@inversionpro.com">inversionproargentina@gmail.com</a></p>
+                <p>Teléfono: <a href="tel:+123456789">+54 11 6412-5527</a></p>
+                <p>Dirección: Av. de la Inversión 123, Ciudad Financiera</p>
+            </div>
+
+            <div class="footer-newsletter">
+                <h4>Suscríbete a Nuestro Boletín</h4>
+                <p>Recibe las últimas novedades y consejos de inversión directamente en tu correo electrónico.</p>
+                <input type="email" placeholder="Ingresa tu email" id="newsletter-email">
+                <button class="btn-black" id="subscribe-btn">Suscribirme</button>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Inversión PRO. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><img src="../assets/icons/fb.svg" alt="Facebook"></a>
+                <a href="#" aria-label="Twitter"><img src="../assets/icons/x.avif" alt="Twitter"></a>
+                <a href="#" aria-label="LinkedIn"><img src="../assets/icons/linkedin-icon.svg" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="herramientas.js"></script>
+</body>
+
+</html>

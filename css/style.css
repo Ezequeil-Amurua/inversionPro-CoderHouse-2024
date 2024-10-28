@@ -748,7 +748,6 @@ footer h4 {
     .nav-container {
         flex-direction: column;
         padding: 15px;
-        gap: 15px;
     }
 }
 

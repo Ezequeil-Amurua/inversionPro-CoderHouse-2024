@@ -777,7 +777,7 @@ footer h4 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: url(/assets/img-herramientas/background-image-input3.jfif) no-repeat center center / cover;
+    background: url(../assets/img-herramientas/background-image-input3.jfif) no-repeat center center / cover;
     height: 250px;
     width: 100%;
 }
